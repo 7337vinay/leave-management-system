@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Leave Management System</h1>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <a href="#employee-section">Employee</a>
+        <a href="#balance-section">Balance</a>
+        <a href="#apply-section">Apply Leave</a>
+        <a href="#history-section">History</a>
+    </nav>
+
+    <!-- EMPLOYEE -->
+    <div class="card" id="employee-section">
+        <h2>Employee Information</h2>
+
+        <input type="text" id="employeeName" placeholder="Name">
+        <input type="text" id="employeeId" placeholder="Employee ID">
+        <input type="text" id="department" placeholder="Department">
+
+        <button id="saveEmployeeBtn">Save Employee</button>
+        <button onclick="clearAllData()">Clear Data</button>
+    </div>
+
+    <!-- BALANCE -->
+    <div class="card" id="balance-section">
+        <h2>Leave Balance</h2>
+
+        <p>Total Leaves: <span id="totalLeaves">4</span></p>
+        <p>Used Leaves: <span id="usedLeaves">0</span></p>
+        <p>Remaining Leaves: <span id="remainingLeaves">4</span></p>
+    </div>
+
+    <!-- APPLY LEAVE -->
+    <div class="card" id="apply-section">
+        <h2>Apply Leave</h2>
+
+        <select id="leaveType">
+            <option value="">Select Leave Type</option>
+            <option>Sick Leave</option>
+            <option>Casual Leave</option>
+            <option>Vacation Leave</option>
+        </select>
+
+        <input type="date" id="startDate">
+        <input type="date" id="endDate">
+
+        <textarea id="reason" placeholder="Reason"></textarea>
+
+        <button id="applyLeaveBtn">Apply Leave</button>
+    </div>
+
+    <!-- HISTORY -->
+    <div class="card" id="history-section">
+        <h2>Leave History</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Days</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="leaveTableBody"></tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
